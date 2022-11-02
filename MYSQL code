@@ -18,9 +18,9 @@ c.execute('''CREATE TABLE table1(
 name INT
 )''')
 
-#]nsert to table
+#insert to table
 c.execute('INSERT INTO table1 VALUES(%s)' , ("iman"))
-#You must save insert
+#Changes should be saved
 mydb.commit()
 
 #Delete Record
@@ -34,8 +34,11 @@ c.execute('UPDATE table1 SET name=%s ' , ("ali"))
 mydb.commit()
 
 #Select all record from table1 
-c.execute('SELECT * FROM mahak')
+c.execute('SELECT * FROM table1')
 #show all slected
 print(c.fetchall())
 #show The first row is selected
 print(c.fetchone())
+
+#DELETE TABLE
+c.execute('DROP TABLE table1')
