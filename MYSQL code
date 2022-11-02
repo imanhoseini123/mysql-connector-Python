@@ -1,0 +1,41 @@
+import mysql.connector
+
+#connect to MYSQL
+mydb = mysql.connector.connect(
+    host = 'localhost',
+    user = 'root',       
+    password='password',
+    database = 'databasename'
+)
+
+c=mydb.cursor()
+
+#Creat database in MYSQL
+c.execute('CREAT DATABASE databasename)
+
+#Creat table in MYSQL
+c.execute('''CREATE TABLE table1(
+name INT
+)''')
+
+#]nsert to table
+c.execute('INSERT INTO table1 VALUES(%s)' , ("iman"))
+#You must save insert
+mydb.commit()
+
+#Delete Record
+#Delete the record named Iman from table 1
+c.execute('DELETE FROM table1 WHERE name=%s' , ("iman"))
+mydb.commit()
+
+#Update Record
+#Converting the record with the name Iman to Reza
+c.execute('UPDATE table1 SET name=%s ' , ("ali"))
+mydb.commit()
+
+#Select all record from table1 
+c.execute('SELECT * FROM mahak')
+#show all slected
+print(c.fetchall())
+#show The first row is selected
+print(c.fetchone())
