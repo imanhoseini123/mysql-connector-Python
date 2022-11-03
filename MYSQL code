@@ -11,7 +11,7 @@ mydb = mysql.connector.connect(
 c=mydb.cursor()
 
 #Creat database in MYSQL
-c.execute('CREAT DATABASE databasename)
+c.execute('CREAT DATABASE databasename')
 
 #Creat table in MYSQL
 c.execute('''CREATE TABLE table1(
