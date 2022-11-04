@@ -1,3 +1,5 @@
+#After using sql codes such as create, delete, insert, update it is necessary to comment them so that they are not rented again.
+
 import mysql.connector
 
 #connect to MYSQL
